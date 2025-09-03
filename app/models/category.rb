@@ -10,5 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Category < ApplicationRecord
+  has_many :vacancies, dependent: :destroy
+
   validates :name, presence: true
 end
