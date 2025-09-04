@@ -1,0 +1,8 @@
+<div class="flex flex-wrap items-center gap-2 pt-4">
+  <% vacancy.skills.each_with_index do |skill, i| %>
+    <% unless i == 0 %>
+      <span class="text-gray-400">•</span>
+    <% end %>
+    <span class="text-xs text-gray-600"><%= skill %></span>
+  <% end %>
+</div>
