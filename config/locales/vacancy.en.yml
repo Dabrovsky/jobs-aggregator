@@ -1,0 +1,19 @@
+en:
+  vacancy:
+    seniorities:
+      junior: Junior
+      mid: Mid
+      senior: Senior
+      manager: Lead/Manager
+    contract_types:
+      b2b: B2B
+      permanent: Permanent
+      intership: Intership
+    employment_types:
+      full_time: Full time
+      part_time: Part time
+      freelance: Freelance
+    operating_modes:
+      remote: Remote
+      hybrid: Hybrid
+      office: Office
