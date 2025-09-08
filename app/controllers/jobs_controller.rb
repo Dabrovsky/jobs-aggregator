@@ -2,10 +2,23 @@
 
 class JobsController < ApplicationController
   def index
-    @vacancies = Vacancy.all
+    @vacancies = Vacancies::List.call(**filter_params).value
   end
 
   def show
     @vacancy = Vacancy.find(params[:id])
+  end
+
+  private
+
+  def filter_params
+    params.permit(
+      :title,
+      :location,
+      seniorities: [],
+      contract_types: [],
+      job_types: [],
+      operating_modes: []
+    )
   end
 end

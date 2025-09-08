@@ -1,0 +1,54 @@
+<%= form_with(
+    url: jobs_path,
+    class: "divide-y-1 divide-gray-200 space-y-3 *:not-last:pb-3",
+    data: { controller: "form", form_autosubmit_value: true, form_submitdelay_value: 100, action: "app#activateSpinner" },
+    method: :get
+  ) do |form| %>
+  <div class="space-y-2">
+    <div class="block text-sm font-medium text-gray-900">Seniority</div>
+    <div class="grid grid-cols-2 space-y-2">
+      <%= form.collection_check_boxes(:seniorities, Vacancy.seniorities.keys, :to_s, ->(val) { t("vacancy.seniorities.#{val}") }, { checked: params[:seniorities], include_hidden: false }) do |b| %>
+        <div class="flex items-center space-x-2">
+          <%= b.check_box class: "w-4 h-4 accent-green-600 cursor-pointer" %>
+          <%= b.label class: "text-sm text-gray-700 cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <div class="block text-sm font-medium text-gray-900">Contract type</div>
+    <div class="grid grid-cols-2 space-y-2">
+      <%= form.collection_check_boxes(:contract_types, Vacancy.contract_types.keys, :to_s, ->(val) { t("vacancy.contract_types.#{val}") }, { checked: params[:contract_types], include_hidden: false }) do |b| %>
+        <div class="flex items-center space-x-2">
+          <%= b.check_box class: "w-4 h-4 accent-green-600 cursor-pointer" %>
+          <%= b.label class: "text-sm text-gray-700 cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <div class="block text-sm font-medium text-gray-900">Job type</div>
+    <div class="grid grid-cols-2 space-y-2">
+      <%= form.collection_check_boxes(:job_types, Vacancy.job_types.keys, :to_s, ->(val) { t("vacancy.job_types.#{val}") }, { checked: params[:job_types], include_hidden: false }) do |b| %>
+        <div class="flex items-center space-x-2">
+          <%= b.check_box class: "w-4 h-4 accent-green-600 cursor-pointer" %>
+          <%= b.label class: "text-sm text-gray-700 cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <div class="block text-sm font-medium text-gray-900">On-site/remote</div>
+    <div class="grid grid-cols-2 space-y-2">
+      <%= form.collection_check_boxes(:operating_modes, Vacancy.operating_modes.keys, :to_s, ->(val) { t("vacancy.operating_modes.#{val}") }, { checked: params[:operating_modes], include_hidden: false }) do |b| %>
+        <div class="flex items-center space-x-2">
+          <%= b.check_box class: "w-4 h-4 accent-green-600 cursor-pointer" %>
+          <%= b.label class: "text-sm text-gray-700 cursor-pointer" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

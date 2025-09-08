@@ -8,7 +8,8 @@ FactoryBot.define do
     description { "Vacancy description" }
     seniority { "junior" }
     contract_type { "permanent" }
-    employment_type { "full_time" }
+    job_type { "full_time" }
     operating_mode { "remote" }
+    location { "Warsaw" }
   end
 end

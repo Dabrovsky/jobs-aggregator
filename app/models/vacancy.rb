@@ -4,19 +4,20 @@
 #
 # Table name: vacancies
 #
-#  id              :uuid             not null, primary key
-#  category_id     :uuid             not null
-#  company_id      :uuid             not null
-#  title           :string           not null
-#  description     :text             not null
-#  seniority       :string           not null
-#  contract_type   :string           not null
-#  employment_type :string           not null
-#  operating_mode  :string           not null
-#  salary          :jsonb            not null
-#  skills          :text             default([]), is an Array
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id             :uuid             not null, primary key
+#  category_id    :uuid             not null
+#  company_id     :uuid             not null
+#  title          :string           not null
+#  description    :text             not null
+#  seniority      :string           not null
+#  contract_type  :string           not null
+#  job_type       :string           not null
+#  operating_mode :string           not null
+#  location       :string           not null
+#  salary         :jsonb            not null
+#  skills         :text             default([]), is an Array
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 class Vacancy < ApplicationRecord
   belongs_to :category
@@ -35,7 +36,7 @@ class Vacancy < ApplicationRecord
     intership: "intership"
   }
 
-  enum :employment_type, {
+  enum :job_type, {
     full_time: "full_time",
     part_time: "part_time",
     freelance: "freelance"
@@ -50,6 +51,6 @@ class Vacancy < ApplicationRecord
   store_accessor :salary, :from, :to, :currency, prefix: true
 
   with_options presence: true do
-    validates :title, :description, :seniority, :contract_type, :employment_type, :operating_mode
+    validates :title, :description, :seniority, :contract_type, :job_type, :operating_mode, :location
   end
 end

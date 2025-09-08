@@ -9,8 +9,9 @@ class CreateVacancies < ActiveRecord::Migration[8.0]
       t.text :description, null: false
       t.string :seniority, null: false
       t.string :contract_type, null: false
-      t.string :employment_type, null: false
+      t.string :job_type, null: false
       t.string :operating_mode, null: false
+      t.string :location, null: false
       t.jsonb :salary, null: false, default: {}
       t.text :skills, array: true, default: []
       t.timestamps
