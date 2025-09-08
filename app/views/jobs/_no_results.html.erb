@@ -1,0 +1,22 @@
+<div role="status" aria-live="polite" class="min-h-[240px] flex flex-col items-center justify-center gap-6 px-6 py-12">
+  <div class="max-w-xl text-center">
+    <h2 class="text-2xl font-semibold text-gray-900">No jobs found</h2>
+    <p class="mt-2 text-sm text-gray-600">We searched everywhere but couldn't find any listings matching your criteria. You can broaden your search or try one of these options.</p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <%= link_to "Browse all jobs", jobs_path, class: "px-5 py-2 rounded text-white text-sm font-medium bg-emerald-500 hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors" %>
+
+      <button
+        type="button"
+        class="px-5 py-2 rounded border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >Post a job</button>
+
+      <button
+        type="button"
+        class="px-4 py-2 rounded text-sm text-green-500 underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      >Try advanced search</button>
+    </div>
+
+    <p class="mt-4 text-xs text-gray-500">Want alerts? <button class="underline">Create a job alert</button>.</p>
+  </div>
+</div>

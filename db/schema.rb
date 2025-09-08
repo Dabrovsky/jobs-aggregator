@@ -33,8 +33,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_03_210015) do
     t.text "description", null: false
     t.string "seniority", null: false
     t.string "contract_type", null: false
-    t.string "employment_type", null: false
+    t.string "job_type", null: false
     t.string "operating_mode", null: false
+    t.string "location", null: false
     t.jsonb "salary", default: {}, null: false
     t.text "skills", default: [], array: true
     t.datetime "created_at", null: false

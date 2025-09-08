@@ -33,7 +33,7 @@
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <%= @vacancy.remote? ? @vacancy.operating_mode : "Singapore" %>
+                  <%= @vacancy.remote? ? @vacancy.operating_mode : @vacancy.location %>
                 </div>
                 <div class="flex items-center justify-end text-gray-400">
                   <%= time_ago_in_words(@vacancy.created_at) %> ago
@@ -51,7 +51,7 @@
       <div class="lg:col-span-1">
         <div class="block bg-white rounded-md border border-gray-200 space-y-4 p-6 py-8 sticky top-4">
           <div class="flex gap-4 pb-4">
-            <button class="w-full bg-emerald-500 text-sm text-white font-medium py-3 px-4 rounded hover:bg-emerald-600 transition-colors">Apply</button>
+            <button class="w-full text-sm text-white font-medium py-3 px-4 rounded bg-emerald-500 hover:bg-emerald-600 transition-colors">Apply</button>
             <button class="w-full border border-gray-300 text-sm text-gray-700 font-medium py-3 px-4 rounded hover:bg-gray-50 transition-colors">Save</button>
           </div>
 
@@ -109,7 +109,7 @@
             </div>
             <div class="flex flex-col">
               <p class="text-gray-400 text-sm">Employment type</p>
-              <p class="text-sm"><%= t("vacancy.employment_types.#{@vacancy.employment_type}") %></p>
+              <p class="text-sm"><%= t("vacancy.job_types.#{@vacancy.job_type}") %></p>
             </div>
           </div>
 
