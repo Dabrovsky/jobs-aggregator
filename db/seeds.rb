@@ -10,7 +10,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-["Lumora", "Axionix", "Tekvane", "Orvexa", "Pixelis"].each do |company_name|
+%w(Lumora Axionix Tekvane Orvexa Pixelis).each do |company_name|
   Company.create!(name: company_name)
 end
 
