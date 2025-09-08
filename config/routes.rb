@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :jobs, only: %i(index show)
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "jobs#index"
 end
