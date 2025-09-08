@@ -2,7 +2,8 @@
 
 class JobsController < ApplicationController
   def index
-    @vacancies = Vacancies::List.call(**filter_params).value
+    records = Vacancies::List.call(**filter_params).value
+    @pagy, @vacancies = pagy(records)
   end
 
   def show
@@ -15,6 +16,7 @@ class JobsController < ApplicationController
     params.permit(
       :title,
       :location,
+      :page,
       seniorities: [],
       contract_types: [],
       job_types: [],

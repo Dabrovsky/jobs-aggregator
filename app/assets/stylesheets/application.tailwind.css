@@ -5,3 +5,20 @@
     @apply 2xl:!max-w-7xl;
   }
 }
+
+/* pagy styles */
+.pagy {
+  @apply flex space-x-1 justify-center text-sm text-gray-500;
+
+  a:not(.gap) {
+    @apply block rounded px-2.5 py-1 bg-transparent hover:bg-gray-200;
+
+    &:not([href]) { /* disabled links */
+      @apply hidden;
+    }
+
+    &.current {
+      @apply inline text-gray-500 bg-gray-200;
+    }
+  }
+}
