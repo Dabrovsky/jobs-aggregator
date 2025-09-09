@@ -14,7 +14,7 @@
   Company.create!(name: company_name)
 end
 
-["Frontend", "Backend", "Fullstack", "Embedded", "AI/ML", "Testing", "DevOps", "UI/UX", "Mobile", "Management", "IT Support", "Admin", "Blockchain", "Security", "Data Engineering", "Business Analysis", "Business Intelligence", "Customer Service", "Game Development", "Other"].each do |category_name|
+["Frontend", "Backend", "Fullstack", "Embedded", "AI/ML", "Testing", "DevOps", "UI/UX", "Mobile", "Management", "IT Support", "Admin", "Blockchain", "Security", "Customer Service", "Game Dev", "Other"].each do |category_name|
   Category.create!(name: category_name)
 end
 
@@ -23,7 +23,7 @@ locations = %w(Brenswick Orvonia Krestal Drovnik Marnov Velshire Tarnovia Grensw
 salaries = [1000, 2000, 3000, 4000, 5000]
 skills = %w(Ruby PHP Python Java JavaScript TypeScript C# C++ Go Swift Kotlin)
 
-15.times do
+20.times do
   from, to = [salaries.sample, salaries.sample].minmax
   Vacancy.create!(
     company_id: Company.pluck(:id).sample,
