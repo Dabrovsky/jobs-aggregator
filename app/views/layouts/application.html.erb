@@ -24,5 +24,6 @@
 
   <%= content_tag :body, data: { controller: "app" } do %>
     <%= yield %>
+    <%= render partial: "layouts/footer" %>
   <% end %>
 </html>
