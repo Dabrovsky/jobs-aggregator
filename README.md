@@ -44,5 +44,5 @@ Users can post, browse, and manage job opportunities in a minimal interface.
 
 ## Screenshots
 
-<img width="2880" height="3272" alt="listing_page" src="https://github.com/user-attachments/assets/dc5276e4-65aa-4e7d-98a2-15d52cfd4e77" />
+<img width="2880" height="3392" alt="listing_page" src="https://github.com/user-attachments/assets/65898774-e7cd-4f2e-b41f-402db717f160" />
 <img width="2880" height="4094" alt="details_page" src="https://github.com/user-attachments/assets/82a4cbd3-917b-44f7-bd96-b1d825c0b1bf" />
