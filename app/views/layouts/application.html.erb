@@ -23,6 +23,7 @@
   </head>
 
   <%= content_tag :body, data: { controller: "app" } do %>
+    <%= render partial: "layouts/header" %>
     <%= yield %>
     <%= render partial: "layouts/footer" %>
   <% end %>
