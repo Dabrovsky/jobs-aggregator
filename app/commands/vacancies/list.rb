@@ -2,6 +2,7 @@
 
 module Vacancies
   class List < Command
+    attribute :category_id, String
     attribute :title, String
     attribute :location, String
     attribute :seniorities, Array
@@ -14,6 +15,7 @@ module Vacancies
     def call
       scope = Vacancy.includes(:company)
       scope = scope
+        .then { filter_category(it) }
         .then { filter_title(it) }
         .then { filter_location(it) }
         .then { filter_seniorities(it) }
@@ -26,6 +28,12 @@ module Vacancies
     end
 
     private
+
+    def filter_category(scope)
+      return scope if category_id.blank?
+
+      scope.where(category_id:)
+    end
 
     def filter_title(scope)
       return scope if title.blank?

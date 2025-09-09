@@ -18,6 +18,14 @@ module Vacancies
       assert_equal 2, output.value.count
     end
 
+    test ".call returns a response filtered by category" do
+      vacancy = create(:vacancy)
+      output = List.call(category_id: vacancy.category_id)
+
+      assert_equal 1, output.value.count
+      assert_equal [vacancy], output.value
+    end
+
     test ".call returns a response filtered by title" do
       vacancy = create(:vacancy, title: "Important")
       output = List.call(title: "Important")

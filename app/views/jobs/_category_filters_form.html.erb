@@ -1,0 +1,17 @@
+<%= form_with(
+    url: jobs_path,
+    data: { controller: "form", form_autosubmit_value: true, form_submitdelay_value: 100, action: "app#activateSpinner" },
+    method: :get
+  ) do |form| %>
+  <div class="hidden lg:flex justify-around flex-wrap pb-3">
+    <%= form.collection_radio_buttons(:category_id, Category.all, :id, :name, { checked: params[:category_id], include_hidden: false }) do |b| %>
+      <%= b.label class: "group flex flex-col gap-1 items-center w-12 md:w-14 text-[10px] leading-3 md:text-xxs text-center cursor-pointer" do %>
+        <%= b.radio_button class: "hidden peer" %>
+        <div class="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 border rounded-full border-gray-300 group-hover:lg:border-violet-500 text-violet-500 peer-checked:bg-violet-500 peer-checked:text-white peer-checked:border-violet-500">
+          <%= render inline: Rails.root.join("public/svg/categories/#{b.object.name.downcase.parameterize(separator: "_")}.svg").read %>
+        </div>
+        <span class="group-hover:underline"><%= b.object.name %></span>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

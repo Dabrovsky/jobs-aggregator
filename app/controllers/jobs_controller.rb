@@ -14,6 +14,7 @@ class JobsController < ApplicationController
 
   def filter_params
     params.permit(
+      :category_id,
       :title,
       :location,
       :page,
