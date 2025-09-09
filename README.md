@@ -42,7 +42,7 @@ Users can post, browse, and manage job opportunities in a minimal interface.
    http://localhost:3000
    ```
 
-### Screenshots
+## Screenshots
 
-<img width="1407" height="1028" alt="listing_page" src="https://github.com/user-attachments/assets/c78b9f0f-8740-4588-b7c4-96aa973ad691" />
-<img width="1392" height="1647" alt="details_page" src="https://github.com/user-attachments/assets/dd7bd8ac-2545-4d21-bd4f-0a87c6da0261" />
+<img width="2880" height="3272" alt="listing_page" src="https://github.com/user-attachments/assets/dc5276e4-65aa-4e7d-98a2-15d52cfd4e77" />
+<img width="2880" height="4094" alt="details_page" src="https://github.com/user-attachments/assets/82a4cbd3-917b-44f7-bd96-b1d825c0b1bf" />
